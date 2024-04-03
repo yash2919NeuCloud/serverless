@@ -24,7 +24,7 @@ exports.helloPubSub = async (event, context) => {
         from: 'Yash <mailgun@yashnahata.me>',
         to: [username],
         subject: 'Email Verification',
-        text: `Please click on the link to verify your email: http://yashnahata.me:3000/v1/user/verify?id=${id}`,
+        text: `Please click on the link to verify your email:  https://yashnahata.me:443/v1/user/verify?id=${id}`,
     };
 
 
