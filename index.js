@@ -18,7 +18,11 @@ exports.helloPubSub = async (event, context) => {
     const id = userData.id;
     const user = await User.findOne({ where: { username } });
     user.timestamp = new Date();
-    user.exptimestamp = new Date(currentTime.getTime() + 2 * 60 * 1000);
+    const currentTime = new Date();
+    const twoMinutesLater = new Date(currentTime.getTime() + 2 * 60 * 1000);
+    user.exptimestamp = twoMinutesLater;
+console.log("Current time:", currentTime);
+console.log("Current time + 2 minutes:", twoMinutesLater);
     await user.save();
 
     const emailData = {
